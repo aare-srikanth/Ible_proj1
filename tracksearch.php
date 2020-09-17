@@ -31,7 +31,8 @@ $joomla(document).ready(function() {
         $joomla('#u_table').DataTable({
         "pagingType": "simple", // "simple" option for 'Previous' and 'Next' buttons only
         "bPaginate": false,
-        "bFilter" : false 
+        "bFilter" : false,
+        "bInfo" : false
       });
  $joomla(function() {
  
@@ -199,16 +200,18 @@ $joomla(document).ready(function() {
 
 .grd-tracknew { /* border: 1px Solid #9F9F9F; max-width: 800px; margin: auto; font: 12px Tahoma, Geneva, sans-serif; */ }
 .grd-tracknew a { /* text-decoration: none; color: #353535; */ }
-.grd-tracknew th, .grd-tracknew td { width: auto; border: 0 !important; padding: 4px; }
-.grd-tracknew th { width: auto; background: #2E3192 !important; color: #fff; text-align: left; }
+.grd-tracknew td.tracknew-active {width: 24px !important;}
+.grd-tracknew.theme_table tbody tr td{min-width:auto !important;}
+.grd-tracknew th, .grd-tracknew td { width: auto !important; border: 0 !important; padding: 4px; }
+.grd-tracknew th { width: auto; color: #fff; text-align: left; }
 .grd-tracknew tr:nth-child(even) { background-color:#EDEDEB }
 .grd-tracknew tr:nth-child(odd) { background-color:#FFFF }
-table.grd-tracknew tr td { width: auto; line-height: 24px; vertical-align: top; overflow: visible !important; }
+table.grd-tracknew tr td { width: auto; vertical-align: top; overflow: visible !important; }
 table.grd-tracknew tr td:nth-child(1), table.grd-tracknew tr td:nth-child(2), .grd-tracknew table tr td:nth-child(4) { width: auto }
 .tracknew-active { background: url(/components/com_userprofile/images/completed-state.png) no-repeat center 10px; position: relative; }
-.tracknew-conline { background: url(/components/com_userprofile/images/con-line.png) repeat-y center 10px; position: absolute; top: 0px; bottom: 0; margin-top: 20px; margin-bottom: -20px; left: 16px; }
+.tracknew-conline { background: url(/components/com_userprofile/images/con-line.png) repeat-y center 10px; position: absolute; top: 0px; bottom: 0; margin-top: 20px; margin-bottom: -20px; left:18px; }
 table.grd-tracknew tr:nth-child(2) td.tracknew-active { background: url(/components/com_userprofile/images/current-state.png) no-repeat center 8px; }
-table.grd-tracknew tr:nth-child(2) td, table.grd-tracknew tr:nth-child(2) td a { color: #2E3192; font-weight: 600; }
+table.grd-tracknew tr:nth-child(2) td, table.grd-tracknew tr:nth-child(2) td a { color: #F9550E; font-weight: 600; }
 table.grd-tracknew tr:last-child td span.tracknew-conline:last-child { background: none; }
 /* Track grid Styles end */
 
