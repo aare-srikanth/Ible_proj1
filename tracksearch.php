@@ -29,7 +29,9 @@ if($user==""){
 var $joomla = jQuery.noConflict(); 
 $joomla(document).ready(function() {
         $joomla('#u_table').DataTable({
-        "pagingType": "simple" // "simple" option for 'Previous' and 'Next' buttons only
+        "pagingType": "simple", // "simple" option for 'Previous' and 'Next' buttons only
+        "bPaginate": false,
+        "bFilter" : false 
       });
  $joomla(function() {
  
