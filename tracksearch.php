@@ -116,13 +116,13 @@ $joomla(document).ready(function() {
 		});
     });	
     
-    $joomla("input.searchinput").after('<span class="clearspace"><i class="clear" title="clear">&cross;</i></span>');
+    $joomla("input.searchinput").after('<span class="clearspace1"><i class="clear1" title="clear">&cross;</i></span>');
     $joomla("input.searchinput").on('keyup input',function(){
-    if ($joomla(this).val()) {$joomla(".clear").addClass("show");} else {$joomla(".clear").removeClass("show");}
+    if ($joomla(this).val()) {$joomla(".clear1").addClass("show");} else {$joomla(".clear1").removeClass("show");}
     });
-    $joomla('.clear').click(function(){
+    $joomla('.clear1').click(function(){
         $joomla('input.searchinput').val('').focus();
-        $joomla(".clear").removeClass("show");
+        $joomla(".clear1").removeClass("show");
     });
 
     
@@ -139,7 +139,9 @@ $joomla(document).ready(function() {
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label>Tracking No <span class="error">*</span></label>
+						<div>
 						<input type="text" class="form-control searchinput" name="searchStr" id="searchStr">
+						</div>
 					</div>
 				</div>
 		        <div class="col-sm-6">
@@ -164,8 +166,19 @@ $joomla(document).ready(function() {
             <div class="row"><div class="col-sm-12"><div class="form-group"><label>Tracking No : <span id="tracid" style="style:color:red"></span></span></label></div></div></div>
         	<div class="row cntr">
                 <div class="col-sm-12 utable">
-            	    <table class="table table-bordered theme_table" id="u_table"><thead><tr><th>Status</th><th>Date</th></tr></thead><tbody><div id="searchsLogs"></div></tbody></table>
-            </div>
+            	    <table class="grd-tracknew table table-stripped table-bordered theme_table" id="u_table">
+            	        <thead>
+            	            <tr>
+            	                <th>&nbsp;</th>
+            	                <th>Status</th>
+            	                <th>Date</th>
+            	            </tr>
+            	       </thead>
+            	       <tbody>
+            	           <div id="searchsLogs"></div>
+            	       </tbody>
+            	   </table>
+                </div>
     	    </div>
             <div class="row">
               <div class="col-sm-12">
@@ -182,23 +195,41 @@ $joomla(document).ready(function() {
 
 
 <style type="text/css">
-    .searchinput{
-    display:inline-block;vertical-align: bottom;
-    width:30%;padding: 5px;padding-right:27px;border:1px solid #ccc;
-        outline: none;
+/* Track grid Styles start */
+
+.grd-tracknew { /* border: 1px Solid #9F9F9F; max-width: 800px; margin: auto; font: 12px Tahoma, Geneva, sans-serif; */ }
+.grd-tracknew a { /* text-decoration: none; color: #353535; */ }
+.grd-tracknew th, .grd-tracknew td { width: auto; border: 0 !important; padding: 4px; }
+.grd-tracknew th { width: auto; background: #2E3192; color: #fff; text-align: left; }
+table.grd-tracknew tr td { width: auto; line-height: 24px; vertical-align: top; overflow: visible !important; }
+table.grd-tracknew tr td:nth-child(1), table.grd-tracknew tr td:nth-child(2), .grd-tracknew table tr td:nth-child(4) { width: auto }
+.tracknew-active { background: url(/components/com_userprofile/images/completed-state.png) no-repeat center 10px; position: relative; }
+.tracknew-conline { background: url(/components/com_userprofile/images/con-line.png) repeat-y center 10px; position: absolute; top: 0px; bottom: 0; margin-top: 20px; margin-bottom: -20px; left: 16px; }
+table.grd-tracknew tr:nth-child(2) td.tracknew-active { background: url(/components/com_userprofile/images/current-state.png) no-repeat center 8px; }
+table.grd-tracknew tr:nth-child(2) td, table.grd-tracknew tr:nth-child(2) td a { color: #2E3192; font-weight: 600; }
+table.grd-tracknew tr:last-child td span.tracknew-conline:last-child { background: none; }
+/* Track grid Styles end */
+
+
+
+    .searchinput{display:inline-block;vertical-align: bottom; padding-right: 30px;
+    /* width:30%;padding: 5px;padding-right:27px;border:1px solid #ccc;
+        outline: none; */
 }
-        .clearspace{width: 20px;display: inline-block;margin-left:-25px;
+        .clearspace1{width: 20px;display: inline-block;margin-left:-25px;
 }
-.clear {
+.clear1 {
     width: 20px;
     transition: max-width 0.3s;overflow: hidden;float: right;
     display: block;max-width: 0px;
+    top: -4px;
+    position: relative;
 }
 
-.show {
+.show{
     cursor: pointer;width: 20px;max-width:20px;
 }
-form{white-space: nowrap;}
+/* form{white-space: nowrap;} */
 
     </style>
     
