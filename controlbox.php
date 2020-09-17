@@ -2247,7 +2247,8 @@ class Controlbox{
             //$mlg='<div class="row"><div class="col-sm-6"><div class="form-group"><label>Tracking No : </label>'.$rec.'</div></div></div>';
             //$mlg.='<table class="table table-bordered theme_table" id="u_table"><thead><tr><th>Status</th><th>Date</th></tr></thead><tbody>';
             foreach($msg->Data as $rg){
-              $mlg.='<tr><td>'.$rg->Status.'</td><td>'.$rg->CreatedDate.'</td></tr>';
+                
+              $mlg.='<tr><td class="tracknew-active" align="center" style="width:36px;"><span class="tracknew-conline">&nbsp;</span></td><td>'.$rg->Status.'</td><td>'.$rg->CreatedDate.'</td></tr>';
             }
             //$mlg.='</tbody></table>';
             return $mlg;    
